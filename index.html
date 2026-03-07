@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض خدمات تسويقية - هيلث جويل</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #e20511;
+            --primary-dark: #660f11;
+            --primary-light: #f4bfbf;
+            --accent-gold: #ffcc11;
+            --accent-green: #21d121;
+            --bg-dark: #353a47;
+            --bg-card: #FFFFFF;
+            --text-primary: #1a2a3a;
+            --text-secondary: #4a5568;
+            --text-light: #FFFFFF;
+            --border: #e0d0d0;
+            --bg-light: #f5eaea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 50%, var(--primary) 100%);
+            color: var(--text-light);
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            margin-bottom: 20px;
+        }
+
+        .hero-logo img {
+            height: 100px;
+            width: auto;
+            filter: brightness(1.1) drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(13, 148, 136, 0.3);
+            border: 1px solid rgba(13, 148, 136, 0.5);
+            color: #f4bfbf;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+
+        .hero-parties {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero-party {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px 32px;
+            min-width: 220px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-party-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-party-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Section Title */
+        .section-header {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-header .section-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 16px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Phase Banner */
+        .phase-banner {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 48px 0 32px;
+            color: var(--text-light);
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .phase-banner .phase-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-banner h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phase-banner p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Service Card */
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            margin-bottom: 32px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card-header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            color: var(--text-light);
+            padding: 28px 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .service-number {
+            background: var(--primary);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .service-title-block {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .service-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .service-price {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            white-space: nowrap;
+            align-self: center;
+        }
+
+        .service-card-body {
+            padding: 32px;
+        }
+
+        .detail-section {
+            margin-bottom: 24px;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            padding: 6px 24px 6px 0;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .detail-list li::before {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .goal-box {
+            background: linear-gradient(135deg, #fde8e8 0%, #FFF 100%);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+
+        .goal-box strong {
+            color: var(--primary);
+        }
+
+        /* Alert / Warning Boxes */
+        .alert-box {
+            background: linear-gradient(135deg, #fef3e2 0%, #FFF 100%);
+            border: 1px solid rgba(212, 168, 83, 0.35);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .alert-box strong {
+            color: var(--accent-gold);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fde8e6 0%, #FFF 100%);
+            border: 1px solid rgba(186, 61, 51, 0.25);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .warning-box strong {
+            color: var(--accent-red);
+        }
+
+        /* Installment Table */
+        .installment-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .installment-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .installment-table td {
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .installment-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .installment-table tr:nth-child(even) td {
+            background: #fffaf8;
+        }
+
+        /* Total Bar */
+        .total-bar {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            border-radius: 20px;
+            padding: 32px 40px;
+            margin: 48px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .total-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .total-amount {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--primary-light);
+        }
+
+        .total-note {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+
+        /* Split Grid for comparison */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .split-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+
+        .split-card-header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a2025 100%);
+            color: var(--text-light);
+            padding: 20px 24px;
+            text-align: center;
+        }
+
+        .split-card-header h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .split-card-header .phase-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 3px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .split-card-body {
+            padding: 24px;
+        }
+
+        .split-card-body .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .split-card-body .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .split-card-body .price-item .price-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Closing */
+        .closing-section {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 48px 40px;
+            margin: 48px 0 60px;
+            border-right: 5px solid var(--primary);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        .closing-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .closing-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .closing-text .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-dark);
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+        }
+
+        /* New Service Badge */
+        .new-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .modified-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .price-item .new-badge,
+        .price-item .modified-badge {
+            font-size: 0.6rem;
+            padding: 1px 7px;
+            margin-right: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 48px 20px 40px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-parties { flex-direction: column; align-items: center; gap: 16px; }
+            .service-card-header { flex-direction: column; gap: 12px; }
+            .service-price { align-self: flex-start; }
+            .total-bar { flex-direction: column; text-align: center; gap: 12px; }
+            .closing-section { padding: 32px 24px; }
+            .split-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .phase-banner { padding: 28px 20px; }
+            .phase-banner h2 { font-size: 1.4rem; }
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; }
+            .hero { padding: 40px 20px 30px; }
+            .service-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .total-bar { box-shadow: none; }
+            .phase-banner { break-inside: avoid; box-shadow: none; }
+            .split-grid { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="brandolgy-02.png" alt="Brandology Logo">
+            </div>
+            <div class="hero-badge">عرض خدمات تسويقية</div>
+            <h1>عرض تسويقي متكامل لـ هيلث جويل</h1>
+            <p class="hero-subtitle">
+                خطة تسويقية مرحلية تبدأ ببناء الأساس وتنمو معكم خطوة بخطوة نحو التوسع والنمو
+            </p>
+            <div class="hero-parties">
+                <div class="hero-party">
+                    <div class="hero-party-label">مقدم من</div>
+                    <div class="hero-party-name">شركة Brandology للتسويق</div>
+                </div>
+                <div class="hero-party">
+                    <div class="hero-party-label">مقدم إلى</div>
+                    <div class="hero-party-name">هيلث جويل</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Introduction -->
+        <div class="section-header">
+            <h2>نهج التدرج الذكي</h2>
+            <p class="section-desc">
+                نؤمن بأن النجاح الرقمي يبدأ بخطوات مدروسة. لذلك صممنا خطة مرحلية تبدأ ببناء السمعة والتأسيس الصحيح ثم تنتقل تدريجياً نحو التوسع والنمو مع نمو المبيعات والنتائج.
+            </p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PHASE 1 -->
+        <!-- ============================================ -->
+        <div class="phase-banner">
+            <div class="phase-label">المرحلة الأولى</div>
+            <h2>مسار بناء السمعة والتأسيس الصحيح</h2>
+            <p>وضع الأساس المتين للحضور الرقمي وبناء سمعة هيلث جويل في السوق</p>
+        </div>
+
+        <!-- Service 1: Website -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">1</div>
+                <div class="service-title-block">
+                    <div class="service-title">
+                        <span class="modified-badge">معدل</span>
+                        تصميم وبرمجة الموقع الإلكتروني
+                    </div>
+                    <div class="service-subtitle">موقع احترافي متكامل يعكس هوية هيلث جويل ويبني الثقة لدى الزوار</div>
+                </div>
+                <div class="service-price">3,500$ على 3 أقساط</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">تصميم وبرمجة الموقع</div>
+                    <ul class="detail-list">
+                        <li>تصميم وبرمجة موقع إلكتروني احترافي متكامل يعكس هوية هيلث جويل ويعرض المنتجات بشكل جذاب ومقنع</li>
+                        <li>بناء صفحات المنتجات مع وصف تفصيلي وصور عالية الجودة وعناصر بناء الثقة</li>
+                        <li>تصميم متجاوب بالكامل مع الجوال لضمان تجربة مستخدم ممتازة على جميع الأجهزة</li>
+                        <li>بناء صفحة "من نحن" وصفحة "اتصل بنا" مع نموذج تواصل متطور</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">البنية التقنية والتحليلات</div>
+                    <ul class="detail-list">
+                        <li>تركيب وربط أدوات التحليل: GA4, Google Search Console, Microsoft Clarity لتتبع سلوك الزوار وقياس الأداء</li>
+                        <li>ضبط البنية التقنية الأساسية: ملف robots.txt، خريطة الموقع XML Sitemap، الروابط الداخلية، وبنية العناوين</li>
+                        <li>تحسين سرعة تحميل الموقع وضمان أداء تقني عالي</li>
+                        <li>تهيئة الموقع لاستقبال حركة الزوار من حملات الإعلانات وجهود SEO</li>
+                    </ul>
+                </div>
+
+                <table class="installment-table">
+                    <thead>
+                        <tr>
+                            <th>القسط</th>
+                            <th>الموعد</th>
+                            <th>المبلغ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>القسط الأول</td>
+                            <td>عند بدء العمل</td>
+                            <td><strong>1,167$</strong></td>
+                        </tr>
+                        <tr>
+                            <td>القسط الثاني</td>
+                            <td>بعد شهر من البدء</td>
+                            <td><strong>1,167$</strong></td>
+                        </tr>
+                        <tr>
+                            <td>القسط الثالث</td>
+                            <td>عند التسليم النهائي</td>
+                            <td><strong>1,166$</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Service 2: Social Media -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">2</div>
+                <div class="service-title-block">
+                    <div class="service-title">إدارة منصات التواصل الاجتماعي</div>
+                    <div class="service-subtitle">إدارة شاملة لحسابات هيلث جويل على منصات التواصل الاجتماعي</div>
+                </div>
+                <div class="service-price">ضمن الـ 19%</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">إعداد المحتوى والنشر</div>
+                    <ul class="detail-list">
+                        <li>إعداد خطة محتوى شهرية متكاملة تتناسب مع طبيعة هيلث جويل وجمهورها المستهدف</li>
+                        <li>إنتاج محتوى احترافي (تصاميم + نصوص) للمنصات المختلفة: إنستغرام، تيك توك، سناب شات</li>
+                        <li>جدولة ونشر المحتوى بأوقات الذروة لتحقيق أعلى وصول وتفاعل</li>
+                        <li>محتوى متنوع يشمل: عروض المنتجات، محتوى تثقيفي صحي، تجارب العملاء، وعروض موسمية</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">التفاعل وبناء المجتمع</div>
+                    <ul class="detail-list">
+                        <li>الرد على التعليقات والرسائل الواردة بشكل يومي لبناء علاقة وثيقة مع المتابعين</li>
+                        <li>مراقبة السمعة الرقمية والتعامل الاحترافي مع أي ملاحظات أو شكاوى</li>
+                        <li>بناء مجتمع رقمي متفاعل حول علامة هيلث جويل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3: Ad Management -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">3</div>
+                <div class="service-title-block">
+                    <div class="service-title">
+                        <span class="modified-badge">معدل</span>
+                        إدارة الحملات الإعلانية المدفوعة
+                    </div>
+                    <div class="service-subtitle">حملات إعلانية موجهة على مختلف المنصات لتحقيق أعلى عائد</div>
+                </div>
+                <div class="service-price">20% من الصرف شهرياً</div>
+            </div>
+            <div class="service-card-body">
+                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">بحد صرف أدناه <strong style="color: var(--primary);">20,000 ريال سعودي</strong> شهرياً</p>
+                <div class="detail-section">
+                    <div class="detail-section-title">حملات Google Ads</div>
+                    <ul class="detail-list">
+                        <li>بحث شامل عن الكلمات المفتاحية التي يستخدمها الجمهور السعودي للبحث عن منتجات هيلث جويل</li>
+                        <li>بناء حملات بحث مفصّلة تستهدف كل فئة منتج على حدة</li>
+                        <li>إعداد حملات إعادة الاستهداف (Retargeting) لزوار الموقع الذين لم يشتروا</li>
+                        <li>تحسين مستمر لتقليل تكلفة النقرة وزيادة التحويلات والمبيعات</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">حملات وسائل التواصل الاجتماعي</div>
+                    <ul class="detail-list">
+                        <li>بناء حملات إعلانية على إنستغرام وسناب شات وتيك توك</li>
+                        <li>إنتاج محتوى إعلاني مخصص لكل منصة بما يناسب طبيعتها وجمهورها</li>
+                        <li>استهداف الفئات العمرية والمناطق والاهتمامات المناسبة</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">إدارة وتحسين مستمر</div>
+                    <ul class="detail-list">
+                        <li>متابعة يومية لأداء الحملات وتعديلها بناءً على البيانات والنتائج</li>
+                        <li>اختبارات A/B مستمرة للنصوص والتصاميم والاستهدافات</li>
+                        <li>تقارير أداء شهرية مفصلة: الإنفاق، التحويلات، تكلفة الاكتساب، والعائد على الإنفاق الإعلاني (ROAS)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4: SEO -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">4</div>
+                <div class="service-title-block">
+                    <div class="service-title">تأسيس وتحسين محركات البحث (SEO)</div>
+                    <div class="service-subtitle">بناء حضور عضوي قوي في نتائج البحث لجذب عملاء مهتمين</div>
+                </div>
+                <div class="service-price">ضمن الـ 19%</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">التحسين التقني (Technical SEO)</div>
+                    <ul class="detail-list">
+                        <li>تحليل تقني شامل للموقع وإصلاح مشاكل الزحف والأرشفة وتحسين سرعة قراءة جوجل للموقع</li>
+                        <li>ضبط البنية التقنية: Schema Markup، العناوين، الوصف، والبنية الداخلية</li>
+                        <li>تحسين سرعة الموقع وتوافقه الكامل مع الجوال</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">بحث الكلمات المفتاحية والمحتوى</div>
+                    <ul class="detail-list">
+                        <li>بحث شامل عن الكلمات المفتاحية المتعلقة بمنتجات هيلث جويل في السوق السعودي</li>
+                        <li>بناء خطة محتوى مبنية على طريقة بحث الجمهور واحتياجاته</li>
+                        <li>كتابة مقالات ومحتوى تثقيفي مدروس بالكلمات المفتاحية لجذب الزوار العضويين</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">بناء الروابط والمتابعة</div>
+                    <ul class="detail-list">
+                        <li>بناء روابط خلفية ذات جودة لتعزيز سلطة الموقع في نظر جوجل</li>
+                        <li>تقارير أداء شهرية: ترتيب الكلمات المفتاحية، حجم الزيارات العضوية، ومعدلات التحويل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5: Ecommerce -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">5</div>
+                <div class="service-title-block">
+                    <div class="service-title">
+                        <span class="new-badge">جديد</span>
+                        إدارة التواجد على منصات التجارة الإلكترونية
+                    </div>
+                    <div class="service-subtitle">إدارة وتطوير حضور هيلث جويل على أكبر منصات البيع الإلكتروني</div>
+                </div>
+                <div class="service-price">ضمن الـ 19%</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">المنصات المستهدفة</div>
+                    <ul class="detail-list">
+                        <li><strong>ترنديول السعودية (Trendyol Saudi)</strong> -إنشاء وإدارة متجر هيلث جويل على المنصة</li>
+                        <li><strong>أمازون (Amazon)</strong> -إنشاء وإدارة صفحات المنتجات وتحسين ظهورها في نتائج البحث الداخلي</li>
+                        <li><strong>نون (Noon)</strong> -إنشاء وإدارة متجر هيلث جويل وتحسين التصنيفات والمبيعات</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">خدمات الإدارة الشاملة</div>
+                    <ul class="detail-list">
+                        <li>إعداد صفحات المنتجات بوصف احترافي وصور عالية الجودة ومحتوى مُحسّن للبحث الداخلي</li>
+                        <li>إدارة المخزون والأسعار والعروض والتخفيضات على جميع المنصات</li>
+                        <li>متابعة الطلبات والتقييمات والرد على استفسارات العملاء</li>
+                        <li>تحسين مستمر للقوائم والمنتجات بناءً على أداء المبيعات والمنافسة</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">التقارير والتحليلات</div>
+                    <ul class="detail-list">
+                        <li>تقارير مبيعات دورية لكل منصة مع تحليل الأداء والفرص</li>
+                        <li>مقارنة الأداء بين المنصات وتوصيات لتحسين المبيعات</li>
+                        <li>رصد المنافسين على كل منصة وتقديم توصيات استراتيجية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6: Reports -->
+        <div class="service-card">
+            <div class="service-card-header">
+                <div class="service-number">6</div>
+                <div class="service-title-block">
+                    <div class="service-title">التقارير الشهرية الشاملة</div>
+                    <div class="service-subtitle">تقارير أداء شفافة ومفصلة لجميع القنوات والخدمات</div>
+                </div>
+                <div class="service-price">ضمن الـ 19%</div>
+            </div>
+            <div class="service-card-body">
+                <div class="detail-section">
+                    <div class="detail-section-title">محتوى التقارير</div>
+                    <ul class="detail-list">
+                        <li>تقرير شامل يغطي أداء جميع القنوات: الموقع، السوشيال ميديا، الإعلانات، SEO، ومنصات التجارة الإلكترونية</li>
+                        <li>تحليل المبيعات والإيرادات مع مقارنة شهرية لقياس النمو</li>
+                        <li>تحليل سلوك الزوار ومعدلات التحويل على الموقع ومنصات التجارة</li>
+                        <li>توصيات واستراتيجيات للتحسين بناءً على البيانات والنتائج</li>
+                    </ul>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-section-title">اجتماعات المتابعة</div>
+                    <ul class="detail-list">
+                        <li>اجتماع شهري لمراجعة النتائج ومناقشة الخطط والتوصيات</li>
+                        <li>تحديث مستمر على الأداء وأي تغييرات طارئة تتطلب تعديل الاستراتيجية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 1 Total -->
+        <div class="total-bar">
+            <div>
+                <div class="total-label">تكاليف المرحلة الأولى</div>
+                <div class="total-note">شهرياً</div>
+            </div>
+            <div style="text-align: left;">
+                <div class="total-amount">19% من إجمالي المبيعات</div>
+                <div class="total-note" style="text-align: left;">+ 20% من الصرف الإعلاني + قسط الموقع</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <strong>ملاحظة:</strong> الحد الأدنى للصرف الإعلاني هو 20,000 ريال سعودي شهرياً. رسوم إدارة الإعلانات (20% من الصرف) مستقلة عن نسبة الـ 19% من المبيعات.
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PHASE 2 -->
+        <!-- ============================================ -->
+        <div class="phase-banner">
+            <div class="phase-label">المرحلة الثانية</div>
+            <h2>مسار النمو والتوسع</h2>
+            <p>بعد بناء الأساس واستقرار العمليات، ننتقل لمرحلة التوسع وزيادة الحصة السوقية</p>
+        </div>
+
+        <div class="split-grid">
+            <div class="split-card">
+                <div class="split-card-header">
+                    <div class="phase-tag">المرحلة الأولى</div>
+                    <h3>التأسيس والبناء</h3>
+                </div>
+                <div class="split-card-body">
+                    <div class="price-item">
+                        <span>نسبة الخدمات</span>
+                        <span class="price-value">19% من المبيعات</span>
+                    </div>
+                    <div class="price-item">
+                        <span><span class="modified-badge">معدل</span> الحد الأدنى للإعلانات</span>
+                        <span class="price-value">20,000 ر.س</span>
+                    </div>
+                    <div class="price-item">
+                        <span><span class="modified-badge">معدل</span> رسوم إدارة الإعلانات</span>
+                        <span class="price-value">20% من الصرف</span>
+                    </div>
+                    <div class="price-item">
+                        <span><span class="modified-badge">معدل</span> الموقع الإلكتروني</span>
+                        <span class="price-value">3,500$ / 3 أقساط</span>
+                    </div>
+                    <div class="price-item">
+                        <span><span class="new-badge">جديد</span> التجارة الإلكترونية</span>
+                        <span class="price-value">مشمولة ✓</span>
+                    </div>
+                </div>
+            </div>
+            <div class="split-card">
+                <div class="split-card-header">
+                    <div class="phase-tag">المرحلة الثانية</div>
+                    <h3>النمو والتوسع</h3>
+                </div>
+                <div class="split-card-body">
+                    <div class="price-item">
+                        <span>نسبة الخدمات</span>
+                        <span class="price-value">19% من المبيعات</span>
+                    </div>
+                    <div class="price-item">
+                        <span>الحد الأدنى للإعلانات</span>
+                        <span class="price-value">50,000 ر.س</span>
+                    </div>
+                    <div class="price-item">
+                        <span>رسوم إدارة الإعلانات</span>
+                        <span class="price-value">لا يوجد</span>
+                    </div>
+                    <div class="price-item">
+                        <span>الموقع الإلكتروني</span>
+                        <span class="price-value">مكتمل ✓</span>
+                    </div>
+                    <div class="price-item">
+                        <span><span class="new-badge">جديد</span> التجارة الإلكترونية</span>
+                        <span class="price-value">مشمولة ✓</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="goal-box" style="margin: 32px 0;">
+            <strong>ما الجديد؟</strong> في المرحلة الثانية، يرتفع الحد الأدنى للإعلانات إلى 50,000 ريال شهرياً مع إلغاء رسوم إدارة الإعلانات بالكامل، مما يعني أن كامل الميزانية الإعلانية يُوجّه مباشرة للحملات. يكون الموقع مكتملاً ومع استمرار جميع الخدمات بما فيها إدارة التجارة الإلكترونية.
+        </div>
+
+        <!-- Closing -->
+        <div class="closing-section">
+            <div class="closing-title">ختاماً</div>
+            <div class="closing-text">
+                نحن في <span class="highlight">Brandology</span> نتطلع لبناء شراكة حقيقية مع <span class="highlight">هيلث جويل</span> مبنية على الثقة والنتائج. صممنا هذا العرض بنهج تدريجي يتيح لكم البدء بتكاليف معقولة مع ضمان بناء أساس رقمي متين يُمهّد لنمو مستدام.
+                <br><br>
+                نلتزم بالشفافية الكاملة في التقارير والنتائج، ونعمل كفريق واحد معكم لتحقيق أهدافكم التسويقية.
+                <br><br>
+                <strong>نتطلع لبدء هذه الرحلة معكم.</strong>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        Brandology &copy; 2026 -جميع الحقوق محفوظة
+    </footer>
+
+</body>
+</html>
